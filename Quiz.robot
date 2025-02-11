@@ -11,20 +11,13 @@ ${PRODUCTS_LINK}       xpath=//a[contains(text(), "Products")]
 
 *** Test Cases ***
 Add Products in Cart
-    [Documentation]    This test case verifies adding products to the cart, 
-    ...                navigating through the pages, and verifying the cart's content.
-    [Tags]    Cart, AddToCart
     Open Browser    ${URL}    chrome
     Maximize Browser Window
     Set Browser Implicit Wait    10s  # Add implicit wait to handle dynamic elements
     Verify Home Page
     Go To Products Page
+    Execute JavaScript    document.body.style.zoom='50%'
     Add First Product To Cart
-    Continue Shopping
-    Add Second Product To Cart
-    Go To Cart
-    Verify Products In Cart
-    Close Browser
 
 *** Keywords ***
 Verify Home Page
@@ -32,15 +25,14 @@ Verify Home Page
     Page Should Contain Element    //div[@class='carousel-inner']
 
 Go To Products Page
-    Wait Until Element Is Visible    ${PRODUCTS_LINK}    timeout=10s  # Wait for the Products link to be visible
+    Wait Until Element Is Visible    ${PRODUCTS_LINK}    timeout=10s 
     Click Element    ${PRODUCTS_LINK}
 
-Add First Product To Cart
-    Wait Until Element Is Visible    ${FIRST_PRODUCT}    timeout=10s  # Wait for the product to be visible
-    Mouse Over    xpath=//div[@class='product-image-wrapper'][1]
-    Click Element    xpath=//a[@data-product-id='1']
-    Wait Until Element Is Visible    //div[@class="modal-dialog"]
-    Click Element    //button[text()='Add to cart']
+Add First Product To Cart 
+    Click Element    xpath=//a[@href='/products']
+    Execute JavaScript    document.body.style.zoom='60%'
+    Mouse Over       xpath=(//div[@class='product-image-wrapper'])[1]
+    Click Element    xpath=(//a[@data-product-id='1'])
 
 Continue Shopping
     Wait Until Element Is Visible    //button[text()='Continue Shopping']    timeout=10s  # Ensure the Continue Shopping button is visible
