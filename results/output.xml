@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.11.4 on win32)" generated="2025-02-11T10:14:12.030569" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Framework" source="D:\Users\ASUS\Desktop\Robot Framework">
+<suite id="s1-s1" name="Quiz" source="D:\Users\ASUS\Desktop\Robot Framework\Quiz.robot">
+<test id="s1-s1-t1" name="Add Products in Cart" line="13">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-11T10:14:12.252315" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-11T10:14:12.252315" elapsed="4.279388"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-11T10:14:16.531703" elapsed="0.033132"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-02-11T10:14:16.566254" elapsed="0.001161"/>
+</kw>
+<kw name="Verify Home Page">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-11T10:14:16.571789" level="INFO">Page title is 'Automation Exercise'.</msg>
+<arg>Automation Exercise</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-11T10:14:16.567415" elapsed="0.004374"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T10:14:16.582795" level="INFO">Current page contains element '//div[@class='carousel-inner']'.</msg>
+<arg>//div[@class='carousel-inner']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-02-11T10:14:16.572788" elapsed="0.011060"/>
+</kw>
+<status status="PASS" start="2025-02-11T10:14:16.567415" elapsed="0.016433"/>
+</kw>
+<kw name="Go To Products Page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PRODUCTS_LINK}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T10:14:16.584852" elapsed="0.017315"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T10:14:16.603191" level="INFO">Clicking element 'xpath=//a[contains(text(), "Products")]'.</msg>
+<arg>${PRODUCTS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T10:14:16.602167" elapsed="1.347140"/>
+</kw>
+<status status="PASS" start="2025-02-11T10:14:16.583848" elapsed="1.366464"/>
+</kw>
+<kw name="Add First Product To Cart">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-02-11T10:14:28.119923" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-11T10:14:28.120923" level="FAIL">Element 'xpath=//div[@class="product-overlay"][1]//a[@data-product-id="1"]' not visible after 10 seconds.</msg>
+<arg>${FIRST_PRODUCT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-02-11T10:14:17.951307" elapsed="10.171617">Element 'xpath=//div[@class="product-overlay"][1]//a[@data-product-id="1"]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Hover Over Element">
+<arg>${FIRST_PRODUCT}</arg>
+<status status="NOT RUN" start="2025-02-11T10:14:28.123925" elapsed="0.002002"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${FIRST_PRODUCT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:14:28.127922" elapsed="0.001007"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@class="modal-dialog"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-02-11T10:14:28.128929" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//button[text()='Add to cart']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:14:28.128929" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-02-11T10:14:17.950312" elapsed="10.178617">Element 'xpath=//div[@class="product-overlay"][1]//a[@data-product-id="1"]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Continue Shopping">
+<status status="NOT RUN" start="2025-02-11T10:14:28.129944" elapsed="0.000000"/>
+</kw>
+<kw name="Add Second Product To Cart">
+<status status="NOT RUN" start="2025-02-11T10:14:28.129944" elapsed="0.000000"/>
+</kw>
+<kw name="Go To Cart">
+<status status="NOT RUN" start="2025-02-11T10:14:28.129944" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Products In Cart">
+<status status="NOT RUN" start="2025-02-11T10:14:28.131275" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-02-11T10:14:28.131275" elapsed="0.001000"/>
+</kw>
+<doc>This test case verifies adding products to the cart,
+navigating through the pages, and verifying the cart's content.</doc>
+<tag>Cart, AddToCart</tag>
+<status status="FAIL" start="2025-02-11T10:14:12.250994" elapsed="15.881281">Element 'xpath=//div[@class="product-overlay"][1]//a[@data-product-id="1"]' not visible after 10 seconds.</status>
+</test>
+<status status="FAIL" start="2025-02-11T10:14:12.052225" elapsed="16.081048"/>
+</suite>
+<status status="FAIL" start="2025-02-11T10:14:12.035314" elapsed="16.099970"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Cart, AddToCart</stat>
+</tag>
+<suite>
+<stat name="Robot Framework" id="s1" pass="0" fail="1" skip="0">Robot Framework</stat>
+<stat name="Quiz" id="s1-s1" pass="0" fail="1" skip="0">Robot Framework.Quiz</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
