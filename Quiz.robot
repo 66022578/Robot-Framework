@@ -37,8 +37,8 @@ Go To Products Page
 
 Add First Product To Cart
     Wait Until Element Is Visible    ${FIRST_PRODUCT}    timeout=10s  # Wait for the product to be visible
-    Hover Over Element    ${FIRST_PRODUCT}
-    Click Element    ${FIRST_PRODUCT}
+    Mouse Over    xpath=//div[@class='product-image-wrapper'][1]
+    Click Element    xpath=//a[@data-product-id='1']
     Wait Until Element Is Visible    //div[@class="modal-dialog"]
     Click Element    //button[text()='Add to cart']
 
